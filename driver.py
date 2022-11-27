@@ -10,7 +10,7 @@ def index():
 
 #prediction function
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1, 4)
+    to_predict = np.array(to_predict_list).reshape(1, 2)
     loaded_model = pickle.load(open("./model/model.pkl", "rb"))
     result = loaded_model.predict(to_predict)
     return result[0]
@@ -19,12 +19,12 @@ def ValuePredictor(to_predict_list):
 def result():
     if request.method == 'POST':
         name = request.form['name']
-        reading_score = request.form['reading']
-        listening_score = request.form['listening']
+        # reading_score = request.form['reading']
+        # listening_score = request.form['listening']
         speaking_score = request.form['speaking']
         writing_score = request.form['writing']
 
-        to_predict_list = list(map(float, [reading_score, listening_score, speaking_score, writing_score]))
+        to_predict_list = list(map(float, [speaking_score, writing_score]))
         result = ValuePredictor(to_predict_list)
 
         if float(result) == 0:
