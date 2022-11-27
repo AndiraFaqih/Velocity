@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>TOEFL</title> {% endblock %}
+
+{% block body %}
+<div class="container mx-auto">
+    <div class="flex justify-center px-6 my-12">
+        <!-- Row -->
+        <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+            <!-- Col -->
+            <img class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 rounded-l-lg"
+                src="{{ url_for('static', filename='../static/assets/bg.jpg') }}"></img>
+            <!-- Col -->
+            <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+                <div class="px-8 mb-4 text-center">
+                    <h3 class="pt-4 mb-2 text-2xl">English Level Checker</h3>
+                    <p class="mb-4 text-sm text-gray-700">
+                        Enter your score to see your English level status
+                    </p>
+                </div>
+                <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded" action="/result" method="POST">
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="name">
+                            Name
+                        </label>
+                        <input required
+                            class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            id="name" type="text" placeholder="Enter name" name="name" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="reading">
+                            Reading Score
+                        </label>
+                        <input required
+                            class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            id="reading" type="number" placeholder="Enter Reading Score (0-1)" name="reading" min="0"
+                            max="1" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="listening">
+                            Listening Score
+                        </label>
+                        <input required
+                            class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            id="listening" type="number" placeholder="Enter Listening Score (0-1)" name="listening" min="0"
+                            max="1" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="speaking">
+                            Speaking Score
+                        </label>
+                        <input required
+                            class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            id="speaking" type="number" placeholder="Enter Speaking Score (0-1)" name="speaking" min="0"
+                            max="1" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="writing">
+                            Writing Score
+                        </label>
+                        <input required
+                            class=" mb-4 w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            id="writing" type="number" placeholder="Enter Writing Score (0-1)" name="writing" min="0"
+                            max="1" />
+                    </div>
+                    <div class="mb-2 text-center">
+                        <input required
+                            class="w-full px-4 py-2 font-bold text-white bg-indigo-500 cursor-pointer rounded-full hover:bg-indigo-700 focus:outline-none focus:shadow-outline"
+                            type="submit" value="Check">
+                        </input>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
