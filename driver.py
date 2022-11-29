@@ -21,18 +21,18 @@ def result():
         name = request.form['name']
         # reading_score = request.form['reading']
         # listening_score = request.form['listening']
-        speaking_score = request.form['speaking']
-        writing_score = request.form['writing']
+        speaking_score = request.form['Speaking']
+        writing_score = request.form['Writing']
 
         to_predict_list = list(map(float, [speaking_score, writing_score]))
         result = ValuePredictor(to_predict_list)
 
         if float(result) == 0:
-            prediction = 'Noob'
+            prediction = 'BASIC'
         elif float(result) == 1:
-            prediction = 'Oke'
+            prediction = 'INTERMEDIATE'
         elif float(result) == 2:
-            prediction = 'Ngeri'
+            prediction = 'ADVANCED'
 
         return render_template("result.html", prediction=prediction, name=name)
         
