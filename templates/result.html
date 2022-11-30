@@ -4,28 +4,37 @@
 
 {% block body %}
 <div class="wrapper">
-        <div class="container mx-auto flex justify-center my-12">
-            <div class="bg-white w-full rounded-lg xl:w-3/4 lg:w-11/12 p-5">
-                <a href="/" class="hover:text-indigo-500 w-1/12">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-4 h-4 inline">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                    </svg>
+    <div class="container mx-auto flex justify-center my-12">
+        <div class="bg-white w-full rounded-lg xl:w-3/4 lg:w-11/12 p-5">
+            <a href="/" class="hover:text-indigo-500 w-1/12">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-4 h-4 inline">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
 
-                    <p class="inline">Back</p>
-                </a>
+                <p class="inline">Back</p>
+            </a>
 
-                <h1 class="pt-4 text-xl text-center">Hi,<span class="font-bold">{{name}}</span></h1>
-                <br>
-                <h4 class="text-lg text-center">Your English result is</h4>
-                <br>
-                <div class="flex justify-center">
-                    <!-- <img src="{{ url_for('static', filename='img/result.jpg') }}" alt="result" class="w-96" /> -->
-                </div>
-                <h2 class="font-bold text-center text-bold bg-gradient-to-r from-[#d278ff] via-[#a860cc] to-[#6d5edf]  text-white text-xl p-4 mx-10   ">
-                    {{prediction}}
-                </h2>
-            </div>  
+            <h1 class="pt-4 text-xl text-center">Hi,<span style="color: black; font-weight: bold;">{{name}}</span></h1>
+
+            <div class="flex justify-center">
+                {% if prediction == 'BASIC' %}
+                <img class="w-60 mb-5" src="{{ url_for('static', filename='assets/images/basic.png') }}" alt="result">
+                {% elif prediction == 'INTERMEDIATE' %}
+                <img class="w-60 mb-5" src="{{ url_for('static', filename='assets/images/intermediate.png') }}"
+                    alt="result">
+                {% elif prediction == 'ADVANCED' %}
+                <img class="w-60 mb-5" src="{{ url_for('static', filename='assets/images/advanced.png') }}"
+                    alt="result">
+                {% endif %}
+            </div>
+            <h4 class="text-lg text-center">Your English result is</h4>
+            <br>
+            <h2
+                class="rounded-md font-bold text-center text-bold bg-gradient-to-br from-[#1EAE98] to-[#005555]  text-white text-xl p-4 mx-10   ">
+                {{prediction}}
+            </h2>
         </div>
+    </div>
 </div>
 {% endblock %}

@@ -19,8 +19,6 @@ def ValuePredictor(to_predict_list):
 def result():
     if request.method == 'POST':
         name = request.form['name']
-        # reading_score = request.form['reading']
-        # listening_score = request.form['listening']
         speaking_score = request.form['Speaking']
         writing_score = request.form['Writing']
 

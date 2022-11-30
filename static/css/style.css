@@ -73,7 +73,7 @@ a {
 }
 
 .image-3 {
-  position:absolute;
+  position: absolute;
   bottom: 240px;
   right: 10px;
 }
@@ -105,23 +105,25 @@ h3 {
 h1 {
   text-transform: uppercase;
   font-size: 30px;
-  font-family: "Muli-SemiBold";
+  font-family: "Muli-Regular";
   color: #333;
   letter-spacing: 3px;
   text-align: center;
   margin-bottom: 33px;
 }
+
 h4 {
-  text-transform:lowercase;
-  font-size: 10px;
+  /* text-transform: lowercase; */
+  font-size: 14px;
   font-family: "Muli-SemiBold";
   color: #333;
   letter-spacing: 3px;
   text-align: center;
   margin-bottom: 33px;
 }
+
 h2 {
-  text-transform:inherit;
+  text-transform: inherit;
   font-size: 10px;
   font-family: "Muli-SemiBold";
   color: #333;
@@ -279,5 +281,9 @@ button:hover:before, button:hover:after {
     background: none;
   }
 }
+
+/* .result {
+  background-image: linear-gradient(to right bottom, #FFFF9D, #BEEB9F, #79BD8F, #00A388);
+} */
 
 /*# sourceMappingURL=style.css.map */
