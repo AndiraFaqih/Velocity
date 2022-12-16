@@ -32,9 +32,6 @@ def result():
                 prediction = 'BASIC'         
                 suggestion = 'You English skills are deficient. You can start by talking to yourself in the mirror or by talking to a friend in English. You can also start by writing a diary in English or by writing a story in English. You can also start by listening to music in English or by listening to a podcast in English. You can also start by reading a book in English or by reading a news article in English.'
 
-            elif float (writing_score) < 0.45 and float (reading_score) < 0.45:
-                prediction = 'BASIC'
-                suggestion = 'You need to improve your writing and reading skill. You can start by writing a diary in English or by writing a story in English. You can also start by reading a book in English or by reading a news article in English.'
 
             elif float (speaking_score) < 0.31:
                 prediction = 'BASIC'
@@ -52,8 +49,13 @@ def result():
                 prediction = 'BASIC'
                 suggestion = 'You need to improve your reading skill. You can start by reading a book in English or by reading a news article in English.'
 
+            # elif float (writing_score) < 0.45 and float (reading_score) < 0.45:
+            #     prediction = 'BASIC'
+            #     suggestion = 'You need to improve your writing and reading skill. You can start by writing a diary in English or by writing a story in English. You can also start by reading a book in English or by reading a news article in English.'
+            
+
         elif float(result) == 1:
-            if ((float (speaking_score) > 0.45 and float (speaking_score) < 0.65) and (float (writing_score) > 0.45 and float (writing_score) < 0.65) and (float (listening_score) > 0.45 and float (listening_score) < 0.65) and (float (reading_score) > 0.45 and float (reading_score) < 0.65)):
+            if ((float (speaking_score) >= 0.45 and float (speaking_score) < 0.65) and (float (writing_score) >= 0.45 and float (writing_score) < 0.7) and (float (listening_score) >= 0.45 and float (listening_score) < 0.7) and (float (reading_score) >= 0.45 and float (reading_score) < 0.7)):
                 prediction = 'INTERMEDIATE'         
                 suggestion = 'Your English skills are good enough. You can still improve it by practicing more until you reach the advanced level.'
             
@@ -100,30 +102,14 @@ def result():
             elif float (writing_score) < 0.45:
                 prediction = 'INTERMEDIATE'
                 suggestion = 'You need to improve your writing skill. You can start by writing a diary in English or by writing a story in English.'
-
-            # elif (float (writing_score) > 0.45 and float (writing_score) < 0.65):  
-            #     prediction = 'INTERMEDIATE'
-            #     suggestion = 'Your writing skill is good enough. You can start by writing a diary in English or by writing a story to improve your English writing skill.'
             
             elif float (listening_score) < 0.45:
                 prediction = 'INTERMEDIATE'
                 suggestion = 'You need to improve your listening skill. You can start by listening to music in English or by listening to a podcast in English.'
-
-            # elif (float (listening_score) > 0.45 and float (listening_score) < 0.65):
-            #     prediction = 'INTERMEDIATE'
-            #     suggestion = 'Your listening skill is good enough. You can start by listening to music in English or by listening to a podcast to improve your English listening skill.'
             
             elif float (reading_score) < 0.45:
                 prediction = 'INTERMEDIATE'
                 suggestion = 'You need to improve your reading skill. You can start by reading a book in English or by reading a news article in English.'
-
-            # elif (float (reading_score) > 0.45 and float (reading_score) < 0.65):
-            #     prediction = 'INTERMEDIATE'
-            #     suggestion = 'Your reading skill is good enough. You can start by reading a book in English or by reading a news article to improve your English reading skill.'
-            # else:
-            #     prediction = 'INTERMEDIATE'
-            #     suggestion = 'E'
-            # suggestion for intermediate
 
         elif float(result) == 2:
             if float (speaking_score) < 0.45:
