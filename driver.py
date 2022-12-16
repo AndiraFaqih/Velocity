@@ -56,6 +56,18 @@ def result():
             if ((float (speaking_score) > 0.45 and float (speaking_score) < 0.65) and (float (writing_score) > 0.45 and float (writing_score) < 0.65) and (float (listening_score) > 0.45 and float (listening_score) < 0.65) and (float (reading_score) > 0.45 and float (reading_score) < 0.65)):
                 prediction = 'INTERMEDIATE'         
                 suggestion = 'Your English skills are good enough. You can still improve it by practicing more until you reach the advanced level.'
+            
+            elif (float (speaking_score) < 0.45 and float (reading_score) < 0.45 and float (listening_score) < 0.45):
+                prediction = 'INTERMEDIATE'
+                suggestion = 'You need to improve your speaking, listening and reading skill. You can start by talking to yourself in the mirror or by talking to a friend in English. You can also start by listening to music in English or by listening to a podcast in English. You can also start by reading a book in English or by reading a news article in English.'
+
+            elif (float (speaking_score) < 0.45 and float (reading_score) < 0.45 and float (writing_score) < 0.45):
+                prediction = 'INTERMEDIATE'
+                suggestion = 'You need to improve your speaking, reading and writing skill. You can start by talking to yourself in the mirror or by talking to a friend in English. You can also start by writing a diary in English or by writing a story in English. You can also start by reading a book in English or by reading a news article in English.'
+
+            elif (float (reading_score) < 0.45 and float (listening_score) < 0.45 and float (writing_score) < 0.45):
+                prediction = 'INTERMEDIATE'
+                suggestion = 'You need to improve your reading, listening and writing skill. You can start by writing a diary in English or by writing a story in English. You can also start by listening to music in English or by listening to a podcast in English. You can also start by reading a book in English or by reading a news article in English.'
 
             elif (float (speaking_score) < 0.45 and float (writing_score) < 0.45):
                 prediction = 'INTERMEDIATE'
