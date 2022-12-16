@@ -53,22 +53,25 @@ def result():
                 prediction = 'INTERMEDIATE'
                 suggestion = 'You need to improve your speaking and writing skill. You can start by talking to yourself in the mirror or by talking to a friend in English. You can also start by writing a diary in English or by writing a story in English.'
             
-
-            elif float (speaking_score) <= 0.45 and float (listening_score) <= 0.45:
+            elif float (speaking_score) < 0.45 and float (listening_score) < 0.45:
                 prediction = 'INTERMEDIATE'
                 suggestion = 'You need to improve your speaking and listening skill. You can start by talking to yourself in the mirror or by talking to a friend in English. You can also start by listening to music in English or by listening to a podcast in English.'
 
-            elif float (speaking_score) <= 0.45 and float (reading_score) <= 0.45:
+            elif float (speaking_score) < 0.45 and float (reading_score) < 0.45:
                 prediction = 'INTERMEDIATE'
                 suggestion = 'You need to improve your speaking and reading skill. You can start by talking to yourself in the mirror or by talking to a friend in English. You can also start by reading a book in English or by reading a news article in English.'
 
-            elif float (writing_score) <= 0.45 and float (listening_score) <= 0.45:
+            elif float (writing_score) < 0.45 and float (listening_score) < 0.45:
                 prediction = 'INTERMEDIATE'
                 suggestion = 'You need to improve your writing and listening skill. You can start by writing a diary in English or by writing a story in English. You can also start by listening to music in English or by listening to a podcast in English.'
 
-            elif float (writing_score) <= 0.45 and float (reading_score) <= 0.45:
+            elif float (writing_score) < 0.45 and float (reading_score) < 0.45:
                 prediction = 'INTERMEDIATE'
                 suggestion = 'You need to improve your writing and reading skill. You can start by writing a diary in English or by writing a story in English. You can also start by reading a book in English or by reading a news article in English.'
+
+            elif float (listening_score) < 0.45 and float (reading_score) < 0.45:
+                prediction = 'INTERMEDIATE'
+                suggestion = 'You need to improve your listening and reading skill. You can start by listening to music in English or by listening to a podcast in English. You can also start by reading a book in English or by reading a news article in English.'
 
             elif float (speaking_score) < 0.45:
                 prediction = 'INTERMEDIATE'
