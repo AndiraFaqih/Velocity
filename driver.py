@@ -31,15 +31,23 @@ def result():
             if float (speaking_score) < 0.31 and float (writing_score) < 0.39 and float (listening_score) < 0.39 and float (reading_score) < 0.39:
                 prediction = 'BASIC'         
                 suggestion = 'You English skills are deficient. You can start by talking to yourself in the mirror or by talking to a friend in English. You can also start by writing a diary in English or by writing a story in English. You can also start by listening to music in English or by listening to a podcast in English. You can also start by reading a book in English or by reading a news article in English.'
+
+            elif float (writing_score) < 0.45 and float (reading_score) < 0.45:
+                prediction = 'BASIC'
+                suggestion = 'You need to improve your writing and reading skill. You can start by writing a diary in English or by writing a story in English. You can also start by reading a book in English or by reading a news article in English.'
+
             elif float (speaking_score) < 0.31:
                 prediction = 'BASIC'
                 suggestion = 'You need to improve your speaking skill. You can start by talking to yourself in the mirror or by talking to a friend in English.'
+
             elif float (writing_score) < 0.39:
                 prediction = 'BASIC'
                 suggestion = 'You need to improve your writing skill. You can start by writing a diary in English or by writing a story in English.'
+
             elif float (listening_score) < 0.39:
                 prediction = 'BASIC'
                 suggestion = 'You need to improve your listening skill. You can start by listening to music in English or by listening to a podcast in English.'
+
             elif float (reading_score) < 0.39:
                 prediction = 'BASIC'
                 suggestion = 'You need to improve your reading skill. You can start by reading a book in English or by reading a news article in English.'
